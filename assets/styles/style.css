@@ -1,5 +1,9 @@
-header,
-nav li {
+#content,
+main,
+nav ul {
+  display: flex;
+}
+header {
   display: inline;
 }
 .jumbotron,
@@ -49,7 +53,6 @@ nav {
 }
 nav li {
   list-style-type: none;
-  margin-right: 20px;
 }
 nav a {
   font-size: 18px;
@@ -57,11 +60,12 @@ nav a {
   text-decoration: none;
 }
 main {
-  overflow: auto;
+  gap: 1.5rem;
 }
 #content {
-  float: left;
-  width: 75%;
+  flex: 5;
+  flex-flow: column nowrap;
+  gap: 1rem 2rem;
 }
 .featured-image {
   width: 100%;
@@ -72,15 +76,12 @@ main {
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  margin-top: 20px;
 }
 .profile img {
   width: 200px;
 }
 aside {
-  float: right;
-  width: 25%;
-  padding-left: 20px;
+  flex: 1;
 }
 @media screen and (max-width: 1000px) {
   #content,
@@ -88,4 +89,24 @@ aside {
     width: 100%;
     padding: 0;
   }
+}
+@media screen and (max-width: 1200px) {
+  main {
+    flex-flow: column nowrap;
+  }
+  main aside {
+    align-self: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  nav ul {
+    justify-content: center;
+  }
+  main aside {
+    align-self: stretch;
+  }
+}
+nav ul {
+  padding-inline: 4rem;
+  gap: 2rem;
 }
